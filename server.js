@@ -86,14 +86,14 @@ const server = http.createServer(app);
 // ✅ Socket.io with correct CORS (React frontend runs on port 5173)
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // ✅ Frontend URL
+    origin: ["http://localhost:5173",'https://vandvagro.vandvagro.com','http://vandvagro.vandvagro.com'], // ✅ Frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
   },
 });
 
 // ✅ Middlewares
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5000"],
+  origin: ["http://localhost:5173",'https://vandvagro.vandvagro.com','http://vandvagro.vandvagro.com'],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
