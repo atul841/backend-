@@ -169,8 +169,8 @@ const ENV = process.env.CASHFREE_ENV || "sandbox";
 const CF_CLIENT_ID = process.env.CF_CLIENT_ID;
 const CF_CLIENT_SECRET = process.env.CF_CLIENT_SECRET;
 const APP_FRONTEND_URL =
-  process.env.APP_FRONTEND_URL || "http://localhost:5173";
-const APP_BACKEND_URL = process.env.APP_BACKEND_URL || "http://localhost:5000";
+  process.env.APP_FRONTEND_URL || "https://vandvagro.vandvagro.com";
+const APP_BACKEND_URL = process.env.APP_BACKEND_URL || "https://api.vandvagro.com";
 
 const CASHFREE_BASE =
   ENV === "live"
