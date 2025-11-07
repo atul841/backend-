@@ -76,7 +76,6 @@ import profileRoutes from "./routes/profileRoutes.js";
 import kycRoutes from "./routes/kycRoutes.js";
 import rewardRoutes from "./routes/reward.js";
 import referralRoutes from "./routes/referralRoutes.js";
-import referralRouter from "./routes/referral.mjs"; // old version
 import depositRoute from "./routes/depositRoute.mjs";
 
 dotenv.config();
@@ -128,7 +127,7 @@ app.use("/api/profile", profileRoutes);
 app.use("/api/kyc", kycRoutes);
 app.use("/api/reward", rewardRoutes);
 app.use("/api/referral", referralRoutes);
-app.use("/api", referralRouter);
+
 app.use("/api", depositRoute);
 
 // ✅ Default route
