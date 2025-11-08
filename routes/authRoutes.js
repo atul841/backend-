@@ -124,16 +124,39 @@ router.post("/request-password-reset", async (req, res) => {
     });
 
     await transporter.sendMail({
-      from: `"VandV Agro" <${process.env.EMAIL_USER}>`,
-      to: user.email,
-      subject: "Password Reset Request",
-      html: `
-        <p>Hello ${user.name},</p>
-        <p>You requested to reset your password.</p>
-        <p>Click <a href="${resetLink}">here</a> to set a new password.</p>
-        <p>This link will expire in 10 minutes.</p>
-      `,
-    });
+  from: `"V&V Agro Support" <noreply@vandvagro.com>`,
+  to: user.email,
+  subject: "Reset Your Password | V&V.ai Learn & Earn Platform 🔐",
+  html: `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <div style="max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+        <h2 style="color: #1a8917;">Dear ${user.name},</h2>
+        <p>We received a request to reset the password for your V&V.ai Learn & Earn account.
+To create a new password, please click the secure link below:</p>
+        <p>👉 Reset Your Password</p>
+
+        <div style="text-align: center; margin: 25px 0;">
+          <a href="${resetLink}"
+             style="background-color: #1a8917; color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+             This link will redirect you to our password reset page, where you can create a new password.
+Please make sure your new password meets the following requirements:
+          </a>
+        </div>
+
+        <p>For your safety, the reset link will automatically expire after<strong>10 minutes</strong>.</p>
+        <p>Warm regards, <br>
+           <strong>Team V&V.ai</strong>
+           Learn. Earn. Grow.
+           <a href="https://vandv.ai/">www.vandv.ai</a></p>
+        <hr/>
+        <p style="font-size: 12px; color: #999;">
+          © ${new Date().getFullYear()} V&V Agro — All rights reserved.
+        </p>
+      </div>
+    </div>
+  `,
+});
+
 
     res.json({ message: "Password reset link sent to your email!" });
   } catch (error) {
