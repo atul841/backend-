@@ -160,11 +160,12 @@ import express from "express";
 import axios from "axios";
 import User from "../models/User.js";
 import dotenv from 'dotenv';
+import { v4 as uuidv4 } from "uuid";
 dotenv.config();
 
 const router = express.Router();
 
-// Read env at runtime (server.js ensures dotenv loaded)
+
 const ENV = process.env.CASHFREE_ENV || "sandbox";
 const CF_CLIENT_ID = process.env.CF_CLIENT_ID;
 const CF_CLIENT_SECRET = process.env.CF_CLIENT_SECRET;
@@ -181,11 +182,7 @@ function log(...args) {
   console.log(...args);
 }
 
-/**
- * POST /api/payment/create-order
- * Body: { amount, orderId? (optional), customerName?, customerPhone, customerEmail, username? }
- * Returns: cashfree response (including payment_session_id)
- */
+
 router.post("/create-order", async (req, res) => {
   try {
     const { amount, customerName, customerPhone, customerEmail, username } =
@@ -194,7 +191,8 @@ router.post("/create-order", async (req, res) => {
     if (!amount) return res.status(400).json({ error: "Missing amount" });
 
     // Use provided orderId or generate unique one
-    const orderId = req.body.orderId || `ORD_${Date.now()}`;
+    // const orderId = req.body.orderId || `ORD_${Date.now()}`;
+    const orderId = `ORD_${uuidv4()}`;
 
     const payload = {
       order_id: orderId,
@@ -245,7 +243,7 @@ router.post("/create-order", async (req, res) => {
         .json({ error: "payment_session_id missing", details: cfRes.data });
     }
 
-    // Return raw CF data inside `data` for frontend debugging
+   
     res.json({
       success: true,
       environment: ENV,
@@ -261,26 +259,19 @@ router.post("/create-order", async (req, res) => {
   }
 });
 
-/**
- * POST /api/payment/notify
- * Cashfree server-to-server webhook (notify_url)
- * NOTE: set the exact notify_url in Cashfree panel or use the one returned from create-order
- */
+
 router.post("/notify", async (req, res) => {
   try {
     log("→ /api/payment/notify received webhook:", req.body);
 
-    // Cashfree document: webhook body contains orderId, orderStatus, referenceId, etc.
+    
     const body = req.body || {};
     const orderId = body.order_id || body.orderId;
     const orderStatus = body.order_status || body.orderStatus || body.txStatus;
     const referenceId = body.reference_id || body.referenceId;
     const paymentMode = body.payment_mode;
 
-    // Optional: verify signature (if Cashfree sends one) — implement if required
-
-    // Example: find user by mapping of orderId -> username stored earlier (if you saved it)
-    // For demo, we assume you rely on frontend `return_url` and then call mark-purchase endpoint from frontend
+    
     log("→ webhook parsed:", {
       orderId,
       orderStatus,
@@ -288,7 +279,7 @@ router.post("/notify", async (req, res) => {
       paymentMode,
     });
 
-    // Respond 200 quickly — Cashfree expects 200
+    
     res.status(200).json({ received: true });
   } catch (err) {
     log("❌ Error in notify webhook:", err.message);
@@ -296,10 +287,7 @@ router.post("/notify", async (req, res) => {
   }
 });
 
-/**
- * POST /api/payment/mark-purchase/:username
- * Called by frontend after successful redirect (or by webhook) to mark user purchased and give referral income.
- */
+
 router.post("/mark-purchase/:username", async (req, res) => {
   try {
     const { username } = req.params;
@@ -318,7 +306,7 @@ router.post("/mark-purchase/:username", async (req, res) => {
 
     log(`✓ User marked purchased: ${username}`);
 
-    // Referral credit
+    
     if (user.referralCode) {
       const referrer = await User.findOne({ username: user.referralCode });
       if (referrer) {
@@ -339,9 +327,7 @@ router.post("/mark-purchase/:username", async (req, res) => {
   }
 });
 
-/**
- * GET /api/payment/check-purchase/:username
- */
+
 router.get("/check-purchase/:username", async (req, res) => {
   try {
     const { username } = req.params;
