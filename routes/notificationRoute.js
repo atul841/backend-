@@ -4,8 +4,8 @@ import Notification from "../models/Notification.js";
 const router = express.Router();
 
 // Add new notification (called on user register)
-router.post("/", async (req, res) => {
-  try {
+router.post("/", async (req, res) => {  
+  try {      
     const { username, message } = req.body;
     const notif = new Notification({ username, message });
     await notif.save();
