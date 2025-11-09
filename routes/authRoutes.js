@@ -128,49 +128,49 @@
 //   to: user.email,
 //   subject: "Reset Your Password | V&V.ai Learn & Earn Platform 🔐",
 //   html: `
-//   <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px;">
-//     <div style="max-width: 650px; background: #ffffff; margin: auto; border-radius: 10px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-//       <h2 style="color: #1a8917; text-align: center;">🔐 Reset Your Password</h2>
-//       <p>Dear <strong>${user.name}</strong>,</p>
-//       <p>We received a request to reset the password for your <strong>V&V.ai Learn & Earn</strong> account.</p>
-//       <p>To create a new password, please click the secure link below:</p>
+  // <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px;">
+  //   <div style="max-width: 650px; background: #ffffff; margin: auto; border-radius: 10px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  //     <h2 style="color: #1a8917; text-align: center;">🔐 Reset Your Password</h2>
+  //     <p>Dear <strong>${user.name}</strong>,</p>
+  //     <p>We received a request to reset the password for your <strong>V&V.ai Learn & Earn</strong> account.</p>
+  //     <p>To create a new password, please click the secure link below:</p>
 
-//       <div style="text-align: center; margin: 25px 0;">
-//         <a href="${resetLink}" style="background-color: #1a8917; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold;">👉 Reset Your Password</a>
-//       </div>
+  //     <div style="text-align: center; margin: 25px 0;">
+  //       <a href="${resetLink}" style="background-color: #1a8917; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold;">👉 Reset Your Password</a>
+  //     </div>
 
-//       <p>This link will redirect you to our password reset page, where you can create a new password.</p>
-//       <p><strong>Please ensure your new password meets the following requirements:</strong></p>
-//       <ul style="margin-left: 20px;">
-//         <li>Minimum <strong>6 characters</strong></li>
-//         <li>At least one <strong>special character</strong> (e.g., !, @, #, $, %)</li>
-//       </ul>
+  //     <p>This link will redirect you to our password reset page, where you can create a new password.</p>
+  //     <p><strong>Please ensure your new password meets the following requirements:</strong></p>
+  //     <ul style="margin-left: 20px;">
+  //       <li>Minimum <strong>6 characters</strong></li>
+  //       <li>At least one <strong>special character</strong> (e.g., !, @, #, $, %)</li>
+  //     </ul>
 
-//       <p>Once your password has been updated, you can log in to your account here:</p>
-//       <p><a href="https://vandv.ai/login" style="color: #1a8917; text-decoration: none; font-weight: bold;">🔗 Login to Your Account</a></p>
+  //     <p>Once your password has been updated, you can log in to your account here:</p>
+  //     <p><a href="https://vandv.ai/login" style="color: #1a8917; text-decoration: none; font-weight: bold;">🔗 Login to Your Account</a></p>
 
-//       <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;" />
+  //     <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;" />
 
-//       <h3 style="color: #ff9800;">⚠️ Important Security Note:</h3>
-//       <ul style="margin-left: 20px;">
-//         <li><strong>For your safety</strong>, the reset link will automatically expire after <strong>10 minutes</strong>.</li>
-//         <li><strong>Do not share</strong> this reset link with anyone.</li>
-//         <li>This email contains sensitive information — please keep it private and secure.</li>
-//       </ul>
+  //     <h3 style="color: #ff9800;">⚠️ Important Security Note:</h3>
+  //     <ul style="margin-left: 20px;">
+  //       <li><strong>For your safety</strong>, the reset link will automatically expire after <strong>10 minutes</strong>.</li>
+  //       <li><strong>Do not share</strong> this reset link with anyone.</li>
+  //       <li>This email contains sensitive information — please keep it private and secure.</li>
+  //     </ul>
 
-//       <p style="font-size: 12px; color: #777;">
-//         <strong>Note:</strong> This is an automated message from <strong>donotreply@vandv.ai</strong>.<br/>
-//         Please do not reply to this email.
-//       </p>
+  //     <p style="font-size: 12px; color: #777;">
+  //       <strong>Note:</strong> This is an automated message from <strong>donotreply@vandv.ai</strong>.<br/>
+  //       Please do not reply to this email.
+  //     </p>
 
-//       <p style="margin-top: 25px; font-size: 14px; color: #333;">
-//         Warm regards,<br/>
-//         <strong>Team V&V.ai</strong><br/>
-//         <em>Learn. Earn. Grow.</em><br/>
-//         <a href="https://www.vandv.ai" style="color: #1a8917; text-decoration: none;">www.vandv.ai</a>
-//       </p>
-//     </div>
-//   </div>
+  //     <p style="margin-top: 25px; font-size: 14px; color: #333;">
+  //       Warm regards,<br/>
+  //       <strong>Team V&V.ai</strong><br/>
+  //       <em>Learn. Earn. Grow.</em><br/>
+  //       <a href="https://www.vandv.ai" style="color: #1a8917; text-decoration: none;">www.vandv.ai</a>
+  //     </p>
+  //   </div>
+  // </div>
 //   `,
 // });
 
@@ -206,70 +206,70 @@
 //       to: email,
 //       subject: "Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀",
 //       html: `
-//       <div style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 20px;">
-//         <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; border-top: 5px solid #28a745;">
+      // <div style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 20px;">
+      //   <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; border-top: 5px solid #28a745;">
           
-//           <div style="background: #28a745; color: white; text-align: center; padding: 20px;">
-//             <h2>Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀</h2>
-//           </div>
+      //     <div style="background: #28a745; color: white; text-align: center; padding: 20px;">
+      //       <h2>Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀</h2>
+      //     </div>
 
-//           <div style="padding: 25px; color: #333;">
-//             <p>Dear <strong>${name}</strong>,</p>
+      //     <div style="padding: 25px; color: #333;">
+      //       <p>Dear <strong>${name}</strong>,</p>
+               
+      //       <p>
+      //         Congratulations and welcome to 
+      //         <a href="https://www.vandv.ai" target="_blank" style="color: #28a745; text-decoration: none;">
+      //           www.VandV.ai
+      //         </a> — India’s first <em>“We Pay You to Learn”</em> platform.
+      //       </p>
 
-//             <p>
-//               Congratulations and welcome to 
-//               <a href="https://www.vandv.ai" target="_blank" style="color: #28a745; text-decoration: none;">
-//                 www.VandV.ai
-//               </a> — India’s first <em>“We Pay You to Learn”</em> platform.
-//             </p>
+      //       <p>
+      //         You are now part of our exclusive <strong>Learn & Earn Program</strong>,
+      //         where knowledge directly converts into income.
+      //       </p>
 
-//             <p>
-//               You are now part of our exclusive <strong>Learn & Earn Program</strong>,
-//               where knowledge directly converts into income.
-//             </p>
+      //       <p>Your login credentials are below:</p>
 
-//             <p>Your login credentials are below:</p>
+      //       <div style="background: #f1f1f1; padding: 15px; border-radius: 8px; margin: 15px 0;">
+      //         <p><strong>User ID:</strong> ${username}</p>
+      //         <p><strong>Password:</strong> ${password}</p>
+      //       </div>
 
-//             <div style="background: #f1f1f1; padding: 15px; border-radius: 8px; margin: 15px 0;">
-//               <p><strong>User ID:</strong> ${username}</p>
-//               <p><strong>Password:</strong> ${password}</p>
-//             </div>
+      //       <p>
+      //         <strong>Login Link:</strong>
+      //         <a href="https://vandv.ai/login" target="_blank" style="color: #28a745; text-decoration: none;">
+      //           Click here
+      //         </a> to access your account.
+      //       </p>
 
-//             <p>
-//               <strong>Login Link:</strong>
-//               <a href="https://vandv.ai/login" target="_blank" style="color: #28a745; text-decoration: none;">
-//                 Click here
-//               </a> to access your account.
-//             </p>
+      //       <p>
+      //         Start your journey from <strong>Knowledge → Income</strong> today!<br/>
+      //         Access your courses, track your <strong>Udyam-Point</strong>, and explore exciting income-based learning opportunities.
+      //       </p>
 
-//             <p>
-//               Start your journey from <strong>Knowledge → Income</strong> today!<br/>
-//               Access your courses, track your <strong>Udyam-Point</strong>, and explore exciting income-based learning opportunities.
-//             </p>
+      //       <hr style="margin: 25px 0; border: none; border-top: 1px solid #ddd;" />
 
-//             <hr style="margin: 25px 0; border: none; border-top: 1px solid #ddd;" />
+      //       <p style="font-weight: bold; color: #ff9900;">⚠️ Important:</p>
+      //       <ul style="font-size: 14px; color: #555; line-height: 1.6;">
+      //         <li>This email contains confidential login information.</li>
+      //         <li>Please <strong>do not share</strong> these credentials with anyone.</li>
+      //         <li>Keep this email private and secure.</li>
+      //       </ul>
 
-//             <p style="font-weight: bold; color: #ff9900;">⚠️ Important:</p>
-//             <ul style="font-size: 14px; color: #555; line-height: 1.6;">
-//               <li>This email contains confidential login information.</li>
-//               <li>Please <strong>do not share</strong> these credentials with anyone.</li>
-//               <li>Keep this email private and secure.</li>
-//             </ul>
+      //       <p style="font-size: 13px; color: #777;">
+      //         <strong>Note:</strong> This is an automated message from 
+      //         <strong>donotreply@vandv.ai</strong> — please do not reply to this email.
+      //       </p>
 
-//             <p style="font-size: 13px; color: #777;">
-//               <strong>Note:</strong> This is an automated message from 
-//               <strong>donotreply@vandv.ai</strong> — please do not reply to this email.
-//             </p>
-
-//             <p style="margin-top: 25px;">
-//               Warm regards,<br/>
-//               <strong>Team V&V.ai</strong><br/>
-//               <em>Learn. Earn. Grow.</em><br/>
-//               <a href="https://www.vandv.ai" target="_blank" style="color: #28a745;">www.vandv.ai</a>
-//             </p>
-//           </div>
-//         </div>
-//       </div>
+      //       <p style="margin-top: 25px;">
+      //         Warm regards,<br/>
+      //         <strong>Team V&V.ai</strong><br/>
+      //         <em>Learn. Earn. Grow.</em><br/>
+      //         <a href="https://www.vandv.ai" target="_blank" style="color: #28a745;">www.vandv.ai</a>
+      //       </p>
+      //     </div>
+      //   </div>
+      // </div>
 //       `,
 //     };
 
@@ -452,18 +452,48 @@ router.post("/request-password-reset", async (req, res) => {
       subject: "Reset Your Password | V&V.ai Learn & Earn Platform 🔐",
       html: `
         <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px;">
-          <div style="max-width: 650px; background: #ffffff; margin: auto; border-radius: 10px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <h2 style="color: #1a8917; text-align: center;">🔐 Reset Your Password</h2>
-            <p>Dear <strong>${user.name}</strong>,</p>
-            <p>Click below to reset your password:</p>
-            <div style="text-align: center; margin: 25px 0;">
-              <a href="${resetLink}" style="background-color: #1a8917; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none;">👉 Reset Password</a>
-            </div>
-            <p>This link expires in 10 minutes. Please keep it private.</p>
-            <hr />
-            <p style="font-size: 12px; color: #777;">Note: This is an automated message from donotreply@vandv.ai</p>
-          </div>
-        </div>
+    <div style="max-width: 650px; background: #ffffff; margin: auto; border-radius: 10px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h2 style="color: #1a8917; text-align: center;">🔐 Reset Your Password</h2>
+      <p>Dear <strong>${user.name}</strong>,</p>
+      <p>We received a request to reset the password for your <strong>V&V.ai Learn & Earn</strong> account.</p>
+      <p>To create a new password, please click the secure link below:</p>
+
+      <div style="text-align: center; margin: 25px 0;">
+        <a href="${resetLink}" style="background-color: #1a8917; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold;">👉 Reset Your Password</a>
+      </div>
+
+      <p>This link will redirect you to our password reset page, where you can create a new password.</p>
+      <p><strong>Please ensure your new password meets the following requirements:</strong></p>
+      <ul style="margin-left: 20px;">
+        <li>Minimum <strong>6 characters</strong></li>
+        <li>At least one <strong>special character</strong> (e.g., !, @, #, $, %)</li>
+      </ul>
+
+      <p>Once your password has been updated, you can log in to your account here:</p>
+      <p><a href="https://vandv.ai/login" style="color: #1a8917; text-decoration: none; font-weight: bold;">🔗 Login to Your Account</a></p>
+
+      <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ddd;" />
+
+      <h3 style="color: #ff9800;">⚠️ Important Security Note:</h3>
+      <ul style="margin-left: 20px;">
+        <li><strong>For your safety</strong>, the reset link will automatically expire after <strong>10 minutes</strong>.</li>
+        <li><strong>Do not share</strong> this reset link with anyone.</li>
+        <li>This email contains sensitive information — please keep it private and secure.</li>
+      </ul>
+
+      <p style="font-size: 12px; color: #777;">
+        <strong>Note:</strong> This is an automated message from <strong>donotreply@vandv.ai</strong>.<br/>
+        Please do not reply to this email.
+      </p>
+
+      <p style="margin-top: 25px; font-size: 14px; color: #333;">
+        Warm regards,<br/>
+        <strong>Team V&V.ai</strong><br/>
+        <em>Learn. Earn. Grow.</em><br/>
+        <a href="https://www.vandv.ai" style="color: #1a8917; text-decoration: none;">www.vandv.ai</a>
+      </p>
+    </div>
+  </div>
       `,
     });
 
@@ -496,24 +526,69 @@ router.post("/send-welcome-email", async (req, res) => {
       subject: "Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀",
       html: `
         <div style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 20px;">
-          <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; overflow: hidden; border-top: 5px solid #28a745;">
-            <div style="background: #28a745; color: white; text-align: center; padding: 20px;">
-              <h2>Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀</h2>
+        <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; border-top: 5px solid #28a745;">
+          
+          <div style="background: #28a745; color: white; text-align: center; padding: 20px;">
+            <h2>Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀</h2>
+          </div>
+
+          <div style="padding: 25px; color: #333;">
+            <p>Dear <strong>${name}</strong>,</p>
+               
+            <p>
+              Congratulations and welcome to 
+              <a href="https://www.vandv.ai" target="_blank" style="color: #28a745; text-decoration: none;">
+                www.VandV.ai
+              </a> — India’s first <em>“We Pay You to Learn”</em> platform.
+            </p>
+
+            <p>
+              You are now part of our exclusive <strong>Learn & Earn Program</strong>,
+              where knowledge directly converts into income.
+            </p>
+
+            <p>Your login credentials are below:</p>
+
+            <div style="background: #f1f1f1; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <p><strong>User ID:</strong> ${username}</p>
+              <p><strong>Password:</strong> ${password}</p>
             </div>
-            <div style="padding: 25px; color: #333;">
-              <p>Dear <strong>${name}</strong>,</p>
-              <p>Welcome to <a href="https://www.vandv.ai" style="color: #28a745;">www.VandV.ai</a> — India’s first “We Pay You to Learn” platform.</p>
-              <p>Your login credentials:</p>
-              <div style="background: #f1f1f1; padding: 15px; border-radius: 8px;">
-                <p><strong>User ID:</strong> ${username}</p>
-                <p><strong>Password:</strong> ${password}</p>
-              </div>
-              <p><strong>Login:</strong> <a href="https://vandv.ai/login" style="color: #28a745;">Click here</a></p>
-              <hr />
-              <p style="font-size: 12px; color: #777;">Note: This is an automated email from donotreply@vandv.ai</p>
-            </div>
+
+            <p>
+              <strong>Login Link:</strong>
+              <a href="https://vandv.ai/login" target="_blank" style="color: #28a745; text-decoration: none;">
+                Click here
+              </a> to access your account.
+            </p>
+
+            <p>
+              Start your journey from <strong>Knowledge → Income</strong> today!<br/>
+              Access your courses, track your <strong>Udyam-Point</strong>, and explore exciting income-based learning opportunities.
+            </p>
+
+            <hr style="margin: 25px 0; border: none; border-top: 1px solid #ddd;" />
+
+            <p style="font-weight: bold; color: #ff9900;">⚠️ Important:</p>
+            <ul style="font-size: 14px; color: #555; line-height: 1.6;">
+              <li>This email contains confidential login information.</li>
+              <li>Please <strong>do not share</strong> these credentials with anyone.</li>
+              <li>Keep this email private and secure.</li>
+            </ul>
+
+            <p style="font-size: 13px; color: #777;">
+              <strong>Note:</strong> This is an automated message from 
+              <strong>donotreply@vandv.ai</strong> — please do not reply to this email.
+            </p>
+
+            <p style="margin-top: 25px;">
+              Warm regards,<br/>
+              <strong>Team V&V.ai</strong><br/>
+              <em>Learn. Earn. Grow.</em><br/>
+              <a href="https://www.vandv.ai" target="_blank" style="color: #28a745;">www.vandv.ai</a>
+            </p>
           </div>
         </div>
+      </div>
       `,
     };
 
