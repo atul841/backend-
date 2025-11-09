@@ -182,6 +182,109 @@ router.post("/request-password-reset", async (req, res) => {
     res.status(500).json({ message: "Failed to send reset email!" });
   }
 });
+  
+//  Resgistraion email and password change here
+
+
+
+router.post("/send-welcome-email", async (req, res) => {
+  const { email, name, username, password } = req.body;
+
+  try {
+    // ✅ Gmail SMTP transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // ✅ Email content (matches your sample screenshot)
+    const mailOptions = {
+      from: `"V&V.ai Learn & Earn" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: "Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀",
+      html: `
+      <div style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 20px;">
+        <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; border-top: 5px solid #28a745;">
+          
+          <div style="background: #28a745; color: white; text-align: center; padding: 20px;">
+            <h2>Welcome to V&V.ai | Start Your Learn & Earn Journey 🚀</h2>
+          </div>
+
+          <div style="padding: 25px; color: #333;">
+            <p>Dear <strong>${name}</strong>,</p>
+
+            <p>
+              Congratulations and welcome to 
+              <a href="https://www.vandv.ai" target="_blank" style="color: #28a745; text-decoration: none;">
+                www.VandV.ai
+              </a> — India’s first <em>“We Pay You to Learn”</em> platform.
+            </p>
+
+            <p>
+              You are now part of our exclusive <strong>Learn & Earn Program</strong>,
+              where knowledge directly converts into income.
+            </p>
+
+            <p>Your login credentials are below:</p>
+
+            <div style="background: #f1f1f1; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <p><strong>User ID:</strong> ${username}</p>
+              <p><strong>Password:</strong> ${password}</p>
+            </div>
+
+            <p>
+              <strong>Login Link:</strong>
+              <a href="https://vandv.ai/login" target="_blank" style="color: #28a745; text-decoration: none;">
+                Click here
+              </a> to access your account.
+            </p>
+
+            <p>
+              Start your journey from <strong>Knowledge → Income</strong> today!<br/>
+              Access your courses, track your <strong>Udyam-Point</strong>, and explore exciting income-based learning opportunities.
+            </p>
+
+            <hr style="margin: 25px 0; border: none; border-top: 1px solid #ddd;" />
+
+            <p style="font-weight: bold; color: #ff9900;">⚠️ Important:</p>
+            <ul style="font-size: 14px; color: #555; line-height: 1.6;">
+              <li>This email contains confidential login information.</li>
+              <li>Please <strong>do not share</strong> these credentials with anyone.</li>
+              <li>Keep this email private and secure.</li>
+            </ul>
+
+            <p style="font-size: 13px; color: #777;">
+              <strong>Note:</strong> This is an automated message from 
+              <strong>donotreply@vandv.ai</strong> — please do not reply to this email.
+            </p>
+
+            <p style="margin-top: 25px;">
+              Warm regards,<br/>
+              <strong>Team V&V.ai</strong><br/>
+              <em>Learn. Earn. Grow.</em><br/>
+              <a href="https://www.vandv.ai" target="_blank" style="color: #28a745;">www.vandv.ai</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      `,
+    };
+
+    // ✅ Send email
+    await transporter.sendMail(mailOptions);
+    res.json({ message: "Welcome email sent successfully!" });
+  } catch (err) {
+    console.error("Email send error:", err);
+    res.status(500).json({ message: "Email sending failed", error: err.message });
+  }
+});
+
+
+
+
 
 // ===========================================================
 // ✅ STEP 2: RESET PASSWORD (after clicking email link)
